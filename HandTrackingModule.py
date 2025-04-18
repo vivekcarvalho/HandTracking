@@ -60,54 +60,6 @@ class HandTrackingModule():
             if draw:
                 cv2.circle(img, (cx, cy), 15, (0, 255, 255), cv2.FILLED)
 
-# mpHands = mp.solutions.hands
-# hands = mpHands.Hands(static_image_mode=False,
-#                       max_num_hands=1,
-#                       min_detection_confidence=0.7,
-#                       min_tracking_confidence=0.5)
-
-# while True:
-#     success, img = cap.read()
-
-#     # Converts the image from BGR to RGB
-#     imageRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
-#     # Process the image and find hands
-#     results = hands.process(imageRGB)
-#     # print(results.multi_hand_landmarks)
-
-#     # Draw hand landmarks
-#     mpdraw = mp.solutions.drawing_utils
-
-#     if results.multi_hand_landmarks:
-#         for handLms in results.multi_hand_landmarks:
-#             for id, lm in enumerate(handLms.landmark):
-#                 # print(id, lm)
-
-#                 # Mapping the landmark coordinates to the image dimensions
-#                 h, w, c = img.shape
-#                 cx, cy = int(lm.x * w), int(lm.y * h)
-#                 # print(id, cx, cy)
-
-#                 # Draw a circle at the landmark position (Wrist + Finger tips)
-#                 if id in [0, 4, 8, 12, 16, 20]:
-#                     cv2.circle(img, (cx, cy), 15, (255, 0, 255), cv2.FILLED)
-            
-#             mpdraw.draw_landmarks(img, handLms, mpHands.HAND_CONNECTIONS)
-
-#             # getting the frame rate
-#             cTime = time.time()
-#             fps = 1 / (cTime - pTime)
-#             pTime = cTime
-#             cv2.putText(img, 'fps: '+ str(int(fps)), (170, 170), cv2.FONT_HERSHEY_TRIPLEX,
-#                         5, (255, 0, 255), 3, cv2.LINE_4)
-            
-#             # Get the coordinates of the first landmark (wrist)
-#             h, w, c = img.shape
-#             cx, cy = int(handLms.landmark[0].x * w), int(handLms.landmark[0].y * h)
-
-#     cv2.imshow("Image", img)
-#     cv2.waitKey(1)
 
 def main():
     # Main function to encapsulate the script
